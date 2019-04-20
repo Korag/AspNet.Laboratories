@@ -1,0 +1,14 @@
+﻿@model List<Zajecia2.Models.RssItem>
+@{
+    ViewBag.Title = "RssDisplay";
+}
+
+<h2>RssDisplay</h2>
+
+@foreach (var item in Model)
+{
+    <h3>@Html.Raw(@item.Title)</h3>
+    <span>@Html.Raw(@item.Description)</span>
+    <p>@Html.Raw(item.PubDate)</p>
+
+}
