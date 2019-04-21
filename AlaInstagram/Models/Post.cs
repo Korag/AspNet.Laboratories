@@ -10,7 +10,8 @@ namespace AlaInstagram.Models
         public Guid Id { get; set; }
         public string Title { get; set; }
         //public string PhotoPath { get; set; }
-        public virtual List<string> PhotoPath { get; set; }
-        public virtual ICollection<Tag> Tags { get; set; }
+
+        public virtual ICollection<PhotoDetail> PhotoDetail { get; set; }
+        public virtual ICollection<PostTagTechnical> Tags { get; set; }
     }
 }

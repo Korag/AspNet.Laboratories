@@ -32,9 +32,9 @@ namespace WebApplication5.Controllers
             var DisplayViewModels = PublishedPosts.Select(n => new DisplayViewModel
             {
                 Title = n.Title,
-                PhotoPath = n.PhotoPath,
-                Tags = n.Tags.Select(t => t.Name).ToList()
-            }).Reverse().Skip((page-1)*10).Take(10);
+                PhotoPath = _instagramData.GetPhotoDetail().Where(x => n.Id == x.PostId).Select(x=> x.Path).ToList(),
+                Tags = _instagramData.GetPostTag().Where(x=> n.Id == x.PostId).Select(x=> x.TagName).ToList(), 
+            }).Reverse().Skip((page - 1) * 10).Take(10);
 
             double LastPageIndex = Math.Ceiling(PublishedPosts.Count() / 10.0) - 1;
 
@@ -60,8 +60,18 @@ namespace WebApplication5.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
                     var folderName = "Upload";
-                    List<string> imgPaths = new List<string>();
+
+                    Post p = new Post
+                    {
+                        Id = Guid.NewGuid(),
+                        Title = postViewModel.Title,
+                        PhotoDetail = new List<PhotoDetail>(),
+                        //PhotoPath = "/" + folderName + "/" + postViewModel.Image.FileName,
+                        Tags = new List<PostTagTechnical>()
+                    };
+
 
                     foreach (var singleImage in postViewModel.Image)
                     {
@@ -71,52 +81,22 @@ namespace WebApplication5.Controllers
                         {
                             singleImage.CopyTo(photoFile);
 
-                            imgPaths.Add("/" + folderName + "/" + singleImage.FileName);
+                            p.PhotoDetail.Add(new PhotoDetail { Path = "/" + folderName + "/" + singleImage.FileName });
                         }
                     }
 
-                    Post p = new Post
+                    var tags = _instagramData.GetTags(postViewModel.CommaSeparatedTags);
+
+                    foreach (var tag in tags)
                     {
-                        Id = Guid.NewGuid(),
-                        Title = postViewModel.Title,
-                        PhotoPath = imgPaths,
-                        //PhotoPath = "/" + folderName + "/" + postViewModel.Image.FileName,
-                        Tags = postViewModel.CommaSeparatedTags
-                            .Split(',')
-                            .Select(n => new Tag { Id = Guid.NewGuid(), Name = n })
-                            .ToList()
-                    };
+                        p.Tags.Add(new PostTagTechnical
+                        {
+                            Post = p,
+                            Tag = tag,
+                        });
+                    }
 
                     _instagramData.AddPost(p);
-
-                    //foreach (var tag in p.Tags)
-                    //{
-                    //    tag.Post = p;
-                       
-                    //    PostsWithTags.Add(
-                    //        new PostTagTechnical
-                    //        {
-                    //            PostId = p.Id,
-                    //            Post = p,
-                    //            TagId = tag.Id,
-                    //            Tag = tag
-                    //        });
-                    //}
-
-                    foreach (var tag in p.Tags)
-                    {
-                        tag.Post = p;
-
-                        var PTT = new PostTagTechnical
-                            {
-                                PostId = p.Id,
-                                Post = p,
-                                TagId = tag.Id,
-                                Tag = tag
-                            };
-
-                        _instagramData.AddPostTag(PTT);
-                    }     
 
                     return RedirectToAction(nameof(Index));
                 }

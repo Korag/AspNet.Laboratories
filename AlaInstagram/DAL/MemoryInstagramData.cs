@@ -12,7 +12,7 @@ namespace AlaInstagram.DAL
               new List<Post>();
         public static List<PostTagTechnical> PostsWithTags { get; private set; } =
               new List<PostTagTechnical>();
-        public static List<Tag> Tags { get; private set; } =
+        public static List<Tag> Tagss { get; private set; } =
            new List<Tag>();
 
         public void AddPost(Post post)
@@ -25,22 +25,24 @@ namespace AlaInstagram.DAL
             return PublishedPosts; 
         }
 
-        public void AddPostTag(PostTagTechnical postTag)
-        {
-            PostsWithTags.Add(postTag);
-        }
-        public IEnumerable<PostTagTechnical> GetPostsTags()
-        {
-            return PostsWithTags;
-        }
         public void AddTag(Tag tag)
         {
-            Tags.Add(tag);
+            Tagss.Add(tag);
         }
 
-        public IEnumerable<Tag> GetTags()
+        public IEnumerable<Tag> GetTags(string Tags)
         {
-            return Tags;
+            return Tagss;
+        }
+
+        public IEnumerable<PhotoDetail> GetPhotoDetail()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<PostTagTechnical> GetPostTag()
+        {
+            throw new NotImplementedException();
         }
     }
 }

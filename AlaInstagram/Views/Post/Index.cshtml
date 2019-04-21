@@ -10,7 +10,7 @@
     <a asp-action="Create">Publish new post</a>
 </p>
 
-<div class="col-4" style="margin-right: 20vw; margin-left: 20vw" id="instaTable">
+<div class="col-4" style="margin-right: 10vw; margin-left: 10vw" id="instaTable">
     @foreach (var post in Model)
     {
         <div class="row">
@@ -34,7 +34,7 @@
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         @for (int i = 1; i < post.PhotoPath.Count; i++)
                         {
-                            <li data-target="#myCarousel" data-slide-to="@i" style="height:40vw"></li>
+                            <li data-target="#myCarousel" data-slide-to="@i"></li>
                         }
                     </ol>
 
@@ -44,13 +44,13 @@
                         }*@
 
                     <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="@post.PhotoPath.ElementAt(0)" class="img-responsive" />
+                        <div class="item active" style="width: 100%; height: 30vw;">
+                            <img src="@post.PhotoPath.ElementAt(0)" class="img-responsive" style="width: 100%; height: 100%; object-fit: cover;" />
                         </div>
                         @for (int i = 1; i < post.PhotoPath.Count; i++)
                         {
-                            <div class="item">
-                                <img src="@post.PhotoPath.ElementAt(i)" class="img-responsive" />
+                            <div class="item" style="width: 100%; height: 30vw;">
+                                <img src="@post.PhotoPath.ElementAt(i)" class="img-responsive" style="width: 100%; height: 100%; object-fit: cover;" />
                             </div>
                         }
                     </div>

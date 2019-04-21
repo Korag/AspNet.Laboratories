@@ -11,10 +11,10 @@ namespace AlaInstagram.DAL
         IEnumerable<Post> GetPosts();
         void AddPost(Post post);
 
-        IEnumerable<PostTagTechnical> GetPostsTags();
-        void AddPostTag(PostTagTechnical postTag);
-
-        IEnumerable<Tag> GetTags();
+        IEnumerable<Tag> GetTags(string Tags);
         void AddTag(Tag tag);
+
+        IEnumerable<PhotoDetail> GetPhotoDetail();
+        IEnumerable<PostTagTechnical> GetPostTag();
     }
 }

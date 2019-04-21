@@ -23,12 +23,6 @@ namespace AlaInstagram.DAL
             _context.SaveChanges();
         }
 
-        public void AddPostTag(PostTagTechnical postTag)
-        {
-            _context.PostTag.Add(postTag);
-            _context.SaveChanges();
-        }
-
         public void AddTag(Tag tag)
         {
             _context.Tags.Add(tag);
@@ -40,14 +34,34 @@ namespace AlaInstagram.DAL
             return _context.Posts.ToList();
         }
 
-        public IEnumerable<PostTagTechnical> GetPostsTags()
+        public IEnumerable<PhotoDetail> GetPhotoDetail()
         {
-            return _context.PostTag.ToList();
+            return _context.PhotoDetails.ToList();
         }
 
-        public IEnumerable<Tag> GetTags()
+        public IEnumerable<PostTagTechnical> GetPostTag()
         {
-            return _context.Tags.ToList();
+            return _context.PostTagTechnical.ToList();
+        }
+
+        public IEnumerable<Tag> GetTags(string Tags)
+        {
+            List<Tag> tags = new List<Tag>();
+
+            foreach (var singleTag in Tags.Split(','))
+            {
+                var tagExist = _context.Tags.Where(x => x.Name == singleTag).FirstOrDefault();
+
+                if (tagExist == null)
+                {
+                    tags.Add(new Tag { Name = singleTag });
+                }
+                else
+                {
+                    tags.Add(tagExist);
+                }
+            }
+            return tags;
         }
     }
 }
