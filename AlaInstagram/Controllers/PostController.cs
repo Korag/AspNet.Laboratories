@@ -22,6 +22,7 @@ namespace WebApplication5.Controllers
         {
             _environment = environment;
             _instagramData = new EFInstagramData();
+            //_instagramData = new MemoryInstagramData();
         }
 
         // GET: Post
@@ -29,12 +30,19 @@ namespace WebApplication5.Controllers
         {
             var PublishedPosts = _instagramData.GetPosts();
 
-            var DisplayViewModels = PublishedPosts.Select(n => new DisplayViewModel
+            var DisplayViewModels = PublishedPosts.OrderByDescending(n => n.AddedTime).Select(n => new DisplayViewModel
             {
                 Title = n.Title,
                 PhotoPath = _instagramData.GetPhotoDetail().Where(x => n.Id == x.PostId).Select(x=> x.Path).ToList(),
                 Tags = _instagramData.GetPostTag().Where(x=> n.Id == x.PostId).Select(x=> x.TagName).ToList(), 
-            }).Reverse().Skip((page - 1) * 10).Take(10);
+            }).Skip((page - 1) * 10).Take(10);
+
+            //var DisplayViewModels = PublishedPosts.Select(n => new DisplayViewModel
+            //{
+            //    Title = n.Title,
+            //    PhotoPath = n.PhotoPath,
+            //    Tags = n.Tags.Select(t => t.Name).ToList()
+            //}).Reverse().Skip((page - 1) * 10).Take(10);
 
             double LastPageIndex = Math.Ceiling(PublishedPosts.Count() / 10.0) - 1;
 
@@ -69,9 +77,9 @@ namespace WebApplication5.Controllers
                         Title = postViewModel.Title,
                         PhotoDetail = new List<PhotoDetail>(),
                         //PhotoPath = "/" + folderName + "/" + postViewModel.Image.FileName,
-                        Tags = new List<PostTagTechnical>()
+                        Tags = new List<PostTagTechnical>(),
+                        AddedTime = DateTime.Now
                     };
-
 
                     foreach (var singleImage in postViewModel.Image)
                     {
@@ -81,9 +89,9 @@ namespace WebApplication5.Controllers
                         {
                             singleImage.CopyTo(photoFile);
 
-                            p.PhotoDetail.Add(new PhotoDetail { Path = "/" + folderName + "/" + singleImage.FileName });
+                            p.PhotoDetail.Add(new PhotoDetail { PhotoId = new Guid(), Path = "/" + folderName + "/" + singleImage.FileName });
                         }
-                    }
+                    }        
 
                     var tags = _instagramData.GetTags(postViewModel.CommaSeparatedTags);
 
@@ -104,7 +112,7 @@ namespace WebApplication5.Controllers
                 return View(postViewModel);
 
             }
-            catch
+            catch(Exception e)
             {
                 return View();
             }

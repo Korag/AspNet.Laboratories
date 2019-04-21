@@ -10,9 +10,13 @@ namespace AlaInstagram.DAL
     {
         public static List<Post> PublishedPosts { get; private set; } =
               new List<Post>();
-        public static List<PostTagTechnical> PostsWithTags { get; private set; } =
+        public static List<PostTagTechnical> PostTagTechnical{ get; private set; } =
               new List<PostTagTechnical>();
-        public static List<Tag> Tagss { get; private set; } =
+
+        public static List<PhotoDetail> PhotoDetails { get; private set; } =
+              new List<PhotoDetail>();
+
+        public static List<Tag> Tags { get; private set; } =
            new List<Tag>();
 
         public void AddPost(Post post)
@@ -27,22 +31,22 @@ namespace AlaInstagram.DAL
 
         public void AddTag(Tag tag)
         {
-            Tagss.Add(tag);
+            Tags.Add(tag);
         }
 
-        public IEnumerable<Tag> GetTags(string Tags)
+        public IEnumerable<Tag> GetTags(string tags)
         {
-            return Tagss;
+            return Tags;
         }
 
         public IEnumerable<PhotoDetail> GetPhotoDetail()
         {
-            throw new NotImplementedException();
+            return PhotoDetails;
         }
 
         public IEnumerable<PostTagTechnical> GetPostTag()
         {
-            throw new NotImplementedException();
+            return PostTagTechnical;
         }
     }
 }
