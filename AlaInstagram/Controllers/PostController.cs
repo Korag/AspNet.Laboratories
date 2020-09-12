@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using AlaInstagram.DAL;
 using AlaInstagram.Models;
 using AlaInstagram.ViewModels;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace WebApplication5.Controllers
 {
@@ -117,6 +114,5 @@ namespace WebApplication5.Controllers
                 return View();
             }
         }
-
     }
 }

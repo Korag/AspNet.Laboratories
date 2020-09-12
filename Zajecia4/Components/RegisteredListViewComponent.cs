@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Zajecia4.DAL;
-using Zajecia4.Models;
 
 namespace Components.Demo.Components
 {

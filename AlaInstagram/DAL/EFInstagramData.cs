@@ -1,9 +1,6 @@
-﻿using AlaInstagram.DAL;
-using AlaInstagram.Models;
-using System;
+﻿using AlaInstagram.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AlaInstagram.DAL
 {

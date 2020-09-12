@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2048
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsDemo", "WebFormsDemo\WebFormsDemo.csproj", "{1D5B8762-D166-43AB-B43F-437C9697CBCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zajecia2", "Zajecia2\Zajecia2.csproj", "{B3436A57-21AC-486C-B3F5-B0BE2096CEA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleGallery", "Zajecia2\SimpleGallery.csproj", "{B3436A57-21AC-486C-B3F5-B0BE2096CEA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zajecia3", "Zajecia3\Zajecia3.csproj", "{30D7B219-D5CA-46DF-BDD0-4B7F371F2CAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAboutMeSite", "Zajecia3\SimpleAboutMeSite.csproj", "{30D7B219-D5CA-46DF-BDD0-4B7F371F2CAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zajecia4", "Zajecia4\Zajecia4.csproj", "{124AB53A-21FC-4A92-A8FF-D967617C8E4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConferenceGuestSimpleManager", "Zajecia4\ConferenceGuestSimpleManager.csproj", "{124AB53A-21FC-4A92-A8FF-D967617C8E4D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{0CC278B2-7D4B-4696-823A-8F3B839862E6}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.Demo", "Componen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components.Demo2", "Components.Demo2\Components.Demo2.csproj", "{6B72F1C9-E6D1-48A0-9B17-EA2351F2F07C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlaInstagram", "AlaInstagram\AlaInstagram.csproj", "{C54901E9-AF74-4EE6-9647-1686BC99A239}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleInstagram", "AlaInstagram\SimpleInstagram.csproj", "{C54901E9-AF74-4EE6-9647-1686BC99A239}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

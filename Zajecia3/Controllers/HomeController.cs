@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
 using Zajecia3.Models;
@@ -18,14 +17,14 @@ namespace Zajecia3.Controllers
 
         public ActionResult About()
         {
-            //List<RssItem> RandomizedItems = GenerateRssCollection();
+            List<RssItem> RandomizedItems = GenerateRssCollection();
 
-            return View(/*RandomizedItems*/);
+            return View(RandomizedItems);
         }
 
         public List<RssItem> GenerateRssCollection()
         {
-            var url = "http://www.polsatnews.pl/rss/technologie.xml";
+            var url = "https://www.tvn24.pl/internet-hi-tech-media,40.xml";
             var url2 = "https://www.tvn24.pl/internet-hi-tech-media,40.xml";
             var url3 = "https://nt.interia.pl/feed";
 

@@ -3,8 +3,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Zajecia4.Models;
 
 namespace Zajecia4.DAL

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Zajecia3.Models
+﻿namespace Zajecia3.Models
 {
     public class RssItem
     {
