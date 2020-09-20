@@ -9,25 +9,25 @@ The repository contains a number of projects related to ASP.NET technology:
 * SimpleInstagram (AlaInstagram) -> application to imitate the behavior of instagram, allows you to add photos with tags and list them - ASP.NET CORE
 * Components.Demo (ASP.NET Core) and Components.Demo2 (ASP.NET Framework) -> ways of using Component type elements in selected technology
 
-WebForms
+#### WebForms
 
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_1.PNG "WebFormsDemo")
 
-SimpleGallery
+#### SimpleGallery
 
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_2.PNG "SimpleGallery")
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_3.PNG "SimpleGallery")
 
-SimpleAboutMeSite
+#### SimpleAboutMeSite
 
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_4.png "SimpleAboutMeSite")
 
-ConferenceGuestSimpleManager
+#### ConferenceGuestSimpleManager
 
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_5.png "ConferenceGuestSimpleManager")
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_6.png "ConferenceGuestSimpleManager")
 
-SimpleInstagram
+#### SimpleInstagram
 
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_7.PNG "SimpleInstagram")
 ![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_8.PNG "SimpleInstagram")
