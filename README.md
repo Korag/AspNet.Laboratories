@@ -20,12 +20,12 @@ SimpleGallery
 
 SimpleAboutMeSite
 
-![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_4.PNG "SimpleAboutMeSite")
+![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_4.png "SimpleAboutMeSite")
 
 ConferenceGuestSimpleManager
 
-![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_5.PNG "ConferenceGuestSimpleManager")
-![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_6.PNG "ConferenceGuestSimpleManager")
+![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_5.png "ConferenceGuestSimpleManager")
+![alt text](https://github.com/Korag/DocumentationImages/blob/master/AspNet.Laboratories/AspNet.Laboratories_6.png "ConferenceGuestSimpleManager")
 
 SimpleInstagram
 
